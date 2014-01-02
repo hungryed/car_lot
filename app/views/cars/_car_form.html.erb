@@ -1,0 +1,7 @@
+<%= simple_form_for @car do |f| %>
+  <div class="color"><%= f.input :color, collection: Color.all %></div>
+  <div class="year"><%= f.input :year, collection: 1980..Time.now.year %></div>
+  <div class="mileage"><%= f.input :mileage %></div>
+  <div class="description"><%= f.input :description %></div>
+  <%= f.button :submit %>
+<% end %>
