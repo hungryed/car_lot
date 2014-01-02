@@ -17,13 +17,15 @@ feature 'user creates a new car' do
     color = FactoryGirl.create(:color)
     visit new_car_path
     click_on 'Create Car'
-    save_and_open_page
-    within("mileage") do
-      expect(page).to have_content "Mileagecan't be blank"
+    within(".mileage") do
+      have_content "can't be blank"
     end
-    # expect(page).to have_content "Colorcan't be blank"
-    save_and_open_page
-    expect(current_path).to eq(new_car_path)
+    within(".color") do
+      have_content "can't be blank"
+    end
+    within(".year") do
+      have_content "can't be blank"
+    end
   end
 
 end
