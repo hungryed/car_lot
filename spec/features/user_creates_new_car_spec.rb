@@ -28,4 +28,8 @@ feature 'user creates a new car' do
     end
   end
 
+  scenario 'user sees a list of cars' do
+
+  end
+
 end
